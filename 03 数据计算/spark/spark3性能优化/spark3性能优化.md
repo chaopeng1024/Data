@@ -19,12 +19,10 @@
   ## 1、DataFrame
   ## 2、执行计划&优化器
   ## 3、钨丝计划Tungsten
-  ## 4、Spark3新特性：AQE
-  ## 5、Spark3新特性：DPP
-  ## 6、Spark3新特性：Join Hints
-  ## 7、各类join策略
-  ## 8、数据倾斜怎么办
-  ## 9、小结
+  ## 4、Spark3新特性：AQE、DPP、Join Hints
+  ## 5、各类join策略
+  ## 6、数据倾斜怎么办
+  ## 7、小结
 # 四、案例分析
   ## 1、Web UI 参数介绍
   ## 2、使用Web UI进行问题排查
