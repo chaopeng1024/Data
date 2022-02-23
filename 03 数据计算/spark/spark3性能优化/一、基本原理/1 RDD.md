@@ -19,6 +19,16 @@
     横向属性partitions和partitioner锚定数据分片实体，并且规定了数据分片在分布式集群中如何分布；
     纵向属性dependencies和compute用于在纵深方向构建DAG，通过提供重构RDD的容错能力保障内存计算的稳定性。
 
-3、RDD的基本操作
+3、RDD的两大基本操作
+
+   RDD支持的两大算子操作： [Transformation](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations) 和[Action](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)。
+    
+   Transformation主要做的是就是将一个已有的RDD生成另外一个RDD。Transformation具有lazy特性(延迟加载)。只有当我们的程序里面遇到一个action算子的时候，Transformation算子代码才会真正的被执行。
+   
+   Action主要是触发代码的运行，一段spark代码里面至少需要有一个action操作。
+
+
+
+
 
 4、宽依赖和窄依赖
