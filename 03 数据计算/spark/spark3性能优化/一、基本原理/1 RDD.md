@@ -21,11 +21,11 @@
 
 3、RDD的两大基本操作
 
-   RDD支持的两大算子操作： [Transformation](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations) 和[Action](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions)。
+    RDD支持的两大算子操作：Transformation和Action。
     
-   Transformation主要做的是就是将一个已有的RDD生成另外一个RDD。Transformation具有lazy特性(延迟加载)。只有当我们的程序里面遇到一个action算子的时候，Transformation算子代码才会真正的被执行。
+   [Transformation](https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations) 主要做的是就是将一个已有的RDD生成另外一个RDD。Transformation具有lazy特性(延迟加载)。只有当我们的程序里面遇到一个action算子的时候，Transformation算子代码才会真正的被执行。
    
-   Action主要是触发代码的运行，一段spark代码里面至少需要有一个action操作。
+   [Action](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions) 主要是触发代码的运行，一段spark代码里面至少需要有一个action操作。
 
 
 
