@@ -21,8 +21,26 @@
   | partitioner         | 分区函数：数据分片的规则   | 方法 | 分布式 | 横向 |
   | preferredLocations  | 位置列表：存取分片的优先位置      | 变量 |       |      |
   
-    横向属性partitions和partitioner锚定数据分片实体，并且规定了数据分片在分布式集群中如何分布；
-    纵向属性dependencies和compute用于在纵深方向构建DAG，通过提供重构RDD的容错能力保障内存计算的稳定性。
+   横向属性partitions和partitioner锚定数据分片实体，并且规定了数据分片在分布式集群中如何分布。
+   
+   纵向属性dependencies和compute用于在纵深方向构建DAG，通过提供重构RDD的容错能力保障内存计算的稳定性。
+   
+   preferredLocations是实现spark的数据本地性——”移动数据不如移动计算“原则的基础，提升 I/O 效率。
+  
+  **本地性的分类**
+  
+    Process_local：Excutor进程（task线程）读取缓存在本地节点上的数据
+
+    Node_local：读取本地节点硬盘上的数据
+
+    Rack_local：读取存储在同一机架上的其它节点中的数据
+
+    Any：读取非本地节点上的数据
+
+    No_pref：数据本地性无意义，数据存储在Mysql等外部数据源，不在spark集群节点上
+
+  数据读取速度依次递减，网络传输开销依次增大！
+
 
 ## 3 RDD两大基本操作
 
