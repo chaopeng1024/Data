@@ -1,9 +1,14 @@
-## RDD
-1、RDD是什么
+# RDD
+  * [1 RDD是什么](#1-rdd---)
+  * [2 RDD两大特性](#2-rdd----)
+  * [3 RDD两大基本操作](#3-rdd-------)
+  * [4 宽依赖和窄依赖](#4--------)
+  
+## 1 RDD是什么
 
     RDD（Resilient Distributed Dataset）叫做弹性分布式数据集，是Spark中最基本的数据模型抽象，它代表一个不可变、可分区、可并行计算的集合。
 
-2、RDD两大特性  
+## 2 RDD两大特性
 
     RDD两大特性：分布式和容错性。
 
@@ -19,7 +24,7 @@
     横向属性partitions和partitioner锚定数据分片实体，并且规定了数据分片在分布式集群中如何分布；
     纵向属性dependencies和compute用于在纵深方向构建DAG，通过提供重构RDD的容错能力保障内存计算的稳定性。
 
-3、RDD的两大基本操作
+## 3 RDD两大基本操作
 
     RDD支持的两大算子操作：Transformation和Action。
     
@@ -27,7 +32,7 @@
    
    [Action](https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions) 主要是触发代码的运行，一段spark代码里面至少需要有一个action操作。
 
-4、宽依赖和窄依赖
+## 4 宽依赖和窄依赖
 
   宽依赖：父RDD的一个分区对应多个子RDD的分区。
   
@@ -36,4 +41,6 @@
  ![image](https://user-images.githubusercontent.com/15443165/155519799-b923eb38-0a70-473f-bd29-0a4b1dbd0cf0.png)
 
     区分宽窄依赖主要就是看父RDD的一个分区的流向，流向一个的话就是窄依赖，流向多个的话就是宽依赖。
+
+
 
