@@ -11,9 +11,13 @@
 ## 2 DAG与Stage划分
    DAG的构建是通过在RDD上不停地调用算子来完成的，DAG以Actions算子为起点，从后向前回溯，以shuffleMapTask和resultTask这两种类型为划分边界，划分出不同的Stages。
    
+   ![stageDivide](https://user-images.githubusercontent.com/15443165/155694968-25aa6dd9-89bd-4d4c-bd4b-284a747abe11.png)
+   
+   图中可以看出，在宽依赖关系处就会断开依赖链，划分stage，这里的stage1不需要计算，只需要计算stage2和stage3，就可以完成整个Job。
+
    **更详细的过程：**
    
-   DAGScheduler 沿着 DAG 的尾节点一路北上，并沿途判断每一个 RDD 节点的 dependencies 属性。之后，如果判定 RDD 的 dependencies 属性是 NarrowDependency，则 DAGScheduler 继续向前回溯；若 RDD 的依赖是 ShuffleDependency，DAGScheduler 便开启“三招一套”的招式，创建 Stage、注册 Stage 并继续向前回溯。由此可见，何时切割 DAG 并生成新的 Stage 由 RDD 的依赖类型决定，当且仅当 RDD 的依赖是 ShuffleDependency 时，DAGScheduler 才会新建 Stage。
+   [DAGScheduler](https://github.com/apache/spark/blob/c69f08f81042c3ecca4b5dfa5511c1217ae88096/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala) 沿着 DAG 的尾节点一路北上，并沿途判断每一个 RDD 节点的 dependencies 属性。之后，如果判定 RDD 的 dependencies 属性是 NarrowDependency，则 DAGScheduler 继续向前回溯；若 RDD 的依赖是 ShuffleDependency，DAGScheduler 便开启“三招一套”的招式，创建 Stage、注册 Stage 并继续向前回溯。由此可见，何时切割 DAG 并生成新的 Stage 由 RDD 的依赖类型决定，当且仅当 RDD 的依赖是 ShuffleDependency 时，DAGScheduler 才会新建 Stage。
 
    **那么，DAGScheduler怎么判定 RDD 的依赖是 NarrowDependency还是 ShuffleDependency呢？**
    
