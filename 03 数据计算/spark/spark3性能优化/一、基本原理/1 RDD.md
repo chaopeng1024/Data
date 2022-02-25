@@ -27,7 +27,7 @@
    
    preferredLocations是实现spark的数据本地性——”移动数据不如移动计算“原则的基础，提升 I/O 效率。
   
-  **本地性的分类**
+  **数据本地性的分类**
   
     Process_local：Excutor进程（task线程）读取缓存在本地节点上的数据
 
