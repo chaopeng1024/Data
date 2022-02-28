@@ -29,7 +29,7 @@
   
   **数据本地性的分类**
   
-    Process_local：Excutor进程（task线程）读取缓存在本地节点上的数据
+    Process_local：Excutor进程（task线程）读取缓存在本地节点内存上的数据
 
     Node_local：读取本地节点硬盘上的数据
 
