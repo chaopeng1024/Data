@@ -1,9 +1,9 @@
 # 一、基本原理
   ## 1、[RDD](https://github.com/chaopeng1024/Data/blob/gh-pages/03%20%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97/spark/spark3%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/1%20RDD.md)
   ## 2、[DAG](https://github.com/chaopeng1024/Data/blob/gh-pages/03%20%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97/spark/spark3%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/2%20DAG.md)
-  ## 3、调度系统
-  ## 4、存储系统
-  ## 5、内存管理
+  ## 3、[调度系统](https://github.com/chaopeng1024/Data/blob/gh-pages/03%20%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97/spark/spark3%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/3%20%E8%B0%83%E5%BA%A6%E7%B3%BB%E7%BB%9F.md)
+  ## 4、[存储系统](https://github.com/chaopeng1024/Data/blob/gh-pages/03%20%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97/spark/spark3%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/4%20%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F.md)
+  ## 5、[内存管理](https://github.com/chaopeng1024/Data/blob/gh-pages/03%20%E6%95%B0%E6%8D%AE%E8%AE%A1%E7%AE%97/spark/spark3%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/5%20%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)
   ## 6、小结
 # 二、通用调优技巧
   ## 1、开发基本原则
